@@ -11,7 +11,7 @@ var upload = connectMultiparty({ uploadDir: './uploads/users'})
 api.post("/login",userController.login);
 api.post("/register",userController.register);
 api.put("/updateUser/:id",mdAuth.ensureUser,userController.updateUser);
-api.delete("/removeUser/:id",mdAuth.ensureUser,userController.removeUser);
+api.put("/removeUser/:id",mdAuth.ensureUser,userController.removeUser);
 api.get('/getUsers',[mdAuth.ensureUser, mdAuth.ensureAdmin],userController.getUsers);
 //Imagenes
 api.put('/:id/uploadImage', [mdAuth.ensureUser, upload], userController.uploadImage); 
