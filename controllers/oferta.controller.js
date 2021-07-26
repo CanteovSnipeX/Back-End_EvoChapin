@@ -3,6 +3,7 @@ var Oferta = require("../models/oferta.model");
 
 function setOferta(req,res) {
 var  params = req.body;
+
     if(params.name && params.products && params.fechaInicio && params.fechaFnalizacion){
         Oferta.findOne({name: params.nama} ,(err,ofertaFind) => {
             if(err){
@@ -39,3 +40,8 @@ function getOferta(params) {
     
 }
 
+module.exports = {
+    setOferta,
+    removeOferta,
+    getOferta
+}

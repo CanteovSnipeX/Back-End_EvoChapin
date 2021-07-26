@@ -2,7 +2,7 @@
 
 var Comment = require("../models/comment.model");
 
-function Comment(req, res) {
+function setComment(req, res) {
         var comment = new Comment();
         var params = req.body;
 
@@ -51,7 +51,7 @@ function getComment(req, res) {
 }
 
 module.exports = {
-    Comment,
+    setComment,
     getComment,
     removeComment
 }
