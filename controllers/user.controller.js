@@ -212,6 +212,7 @@ function saveUserByAdmin(req, res) {
                             user.role = params.role;
                             user.username = params.username.toLowerCase();
                             user.email = params.email.toLowerCase();
+    
                             user.save((err, userSavedAdmin)=>{
                                 if(err){
                                     return res.status(500).send({message: 'Error general al guardar'});
@@ -311,8 +312,9 @@ function removeUser(req, res){
 
 
 
+
 function getUsers(req, res){
-    User.find({}).populate('bill').exec((err, users) => {
+    User.find({}).populate('torneo').exec((err, users) => {
             if(err){
                     return res.status(500).send({message: 'Error general en el servidor'})
             }else if(users){

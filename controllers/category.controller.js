@@ -183,7 +183,7 @@ function getCategories(req,res){
         if(err){
             return res.status(500).send({message: "Error al obtener los datos"});
         }else if(categories){
-            return res.send({message: "Categorías:",categories});
+            return res.send({message: "Categorías:", categories});
         }else{
             return res.status(403).send({message: "No hay datos"});
         }
@@ -192,11 +192,12 @@ function getCategories(req,res){
 
 function getCategoriesId(req,res){
     let categoryId = req.params.id;
-    Category.find({categoryId}).populate("products").exec((err,categories)=>{
+
+    Category.findById(categoryId).populate("products").exec((err,categories)=>{
         if(err){
             return res.status(500).send({message: "Error al obtener los datos"});
         }else if(categories){
-            return res.send({message: "Categorías:",categories});
+            return res.send({message: "Categoría:", categories});
         }else{
             return res.status(403).send({message: "No hay datos"});
         }
@@ -247,7 +248,8 @@ module.exports = {
     getCategories,
     searchCategory,
     getImageCategory,
-    uploadImageCategory
+    uploadImageCategory,
+    getCategoriesId
     
 
 }

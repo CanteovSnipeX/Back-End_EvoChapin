@@ -11,8 +11,9 @@ var upload = connectMultiparty({ uploadDir: './uploads/category'})
 api.post("/createCategory",[mdAuth.ensureUser,mdAuth.ensureAdmin],categoryController.createCategory);
 api.put("/updateCategory/:id",[mdAuth.ensureUser,mdAuth.ensureAdmin],categoryController.updateCategory);
 api.put("/removeCategory/:id",[mdAuth.ensureUser,mdAuth.ensureAdmin],categoryController.removeCategory);
-api.get("/getCategories",mdAuth.ensureUser,categoryController.getCategories);
+api.get("/getCategories",categoryController.getCategories);
 api.get("/searchCategory",mdAuth.ensureUser,categoryController.searchCategory);
+api.get("/getCategoriesId/:id",categoryController.getCategoriesId);
 
 //imagen
 api.put('/:idC/uploadImageCategory/',[mdAuth.ensureUser,upload],categoryController.uploadImageCategory);
