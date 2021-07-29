@@ -33,6 +33,8 @@ var  params = req.body;
 }
 
 function removeOferta(req, res) {
+
+    
     
 }
 

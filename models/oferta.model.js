@@ -7,7 +7,7 @@ var ofertaSchema = ({
     name:String,
     fechaInicio:String,
     fechaFnalizacion:String,
-    products:[String]
+    products: [{type: Schema.ObjectId, ref:"product"}]
 })
 
 

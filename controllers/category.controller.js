@@ -106,7 +106,7 @@ function createCategory(req,res){
                     }
                 })
             }
-        })
+        }).populate('category');
     }else{
         return res.status(403).send({message: "Ingrese los datos mínimos (Nombre)"})
     }
@@ -159,7 +159,7 @@ function removeCategory(req,res){
                                 if(err){
                                     return res.status(500).send({message: "Error al eliminar"});
                                 }else if(categoryRemoved){
-                                    return res.send({message: "Categoría eliminada exitosamente"});
+                                    return res.send({message: "Categoría eliminada exitosamente", categoryRemoved});
                                 }else{
                                     return res.status(404).send({message: "No se eliminó"});
                                 }
