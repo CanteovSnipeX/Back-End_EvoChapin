@@ -58,7 +58,7 @@ function addBill(req,res){
                 })
                 var bill = new Bill();
                 bill.nit = params.nit;
-                bill.date = params.date;
+                bill.date = now();
                 bill.name = req.user.name;
                 bill.products = producto;
                 bill.save((err,billSaved)=>{

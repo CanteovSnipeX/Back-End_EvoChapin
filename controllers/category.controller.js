@@ -236,9 +236,7 @@ function searchCategory(req,res){
     }
 }
 
-function getIdCategory(req, res){
 
-}
 
 module.exports = {
     deafultCategory,

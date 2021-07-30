@@ -8,6 +8,8 @@ function addToCart(req,res){
     var params = req.body;
     var userId = req.user.sub;
 
+    console.log(params);
+
     if(params.stock){
         Product.findById(productId,(err,productFind)=>{
             if(err){
@@ -20,11 +22,11 @@ function addToCart(req,res){
                         if(err){
                             return res.status(500).send({message: "Error al agregar producto al carrito"});
                         }else if(cartUpdated){
-                            return res.send({message: "Producto agregado al carrito exitosamente"});
+                            return res.send({message: "Producto agregado al carrito exitosamente", cartUpdated});
                         }else{
                             return res.status(404).send({message: "No se agregó al carrito (No se encontró su carrito)"});
                         }
-                    })
+                    }).populate("products")
                 }
             }else{
                 return res.status(403).send({message: "Producto inexistente"});

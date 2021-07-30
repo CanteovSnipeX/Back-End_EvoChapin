@@ -8,6 +8,7 @@ var productRoutes = require("./routes/product.route");
 var cartRoutes = require("./routes/cart.route");
 var billRoutes = require("./routes/bill.route");
 var commentRoutes = require("./routes/comment.route");
+var ofertaRoutes = require("./routes/oferta.route");
 var cors = require('cors');
 
 
@@ -19,12 +20,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-
 app.use("/v1",userRoutes);
 app.use("/v1",categoryRoutes);
 app.use("/v1",productRoutes);
 app.use("/v1",cartRoutes);
 app.use("/v1",billRoutes);
 app.use("/v1",commentRoutes);
-
+app.use("/V1",ofertaRoutes)
 module.exports = app;

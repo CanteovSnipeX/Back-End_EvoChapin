@@ -16,7 +16,7 @@ api.get("/searchCategory",mdAuth.ensureUser,categoryController.searchCategory);
 api.get("/getCategoriesId/:id",categoryController.getCategoriesId);
 
 //imagen
-api.put('/:idC/uploadImageCategory/',[mdAuth.ensureUser,upload],categoryController.uploadImageCategory);
+api.put('/:idC/uploadImageCategory/',[mdAuth.ensureUser, upload],categoryController.uploadImageCategory);
 api.get('getImageCategory/:fileName',[upload],categoryController.getImageCategory);
 
 module.exports = api;

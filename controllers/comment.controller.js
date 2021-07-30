@@ -38,7 +38,7 @@ function removeComment(req, res) {
 }
 
 function getComment(req, res) {
-    Comment.find({}).populate('comment').exec((err,comment)=>{
+    Comment.find({}).exec((err,comment)=>{
         if(err){
             return res.status(500).send({message: 'Error general en el servidor'})
         }else if (comment){
@@ -49,6 +49,7 @@ function getComment(req, res) {
         }
     })
 }
+
 
 module.exports = {
     setComment,
