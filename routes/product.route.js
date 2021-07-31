@@ -15,7 +15,7 @@ api.get("/searchProduct",mdAuth.ensureUser,productController.searchProduct);
 api.get("/spentProducts",mdAuth.ensureUser,productController.spentProducts);
 
 //Imagen
-api.put(":idP/uploadImageProduct",[mdAuth.ensureUser, upload],productController.uploadImageProduct);
+api.put("/:idP/uploadImageProduct/",[upload],productController.uploadImageProduct);
 api.get("/getImageProduct/:fileName",[upload],productController.getImageProduct);
 
 

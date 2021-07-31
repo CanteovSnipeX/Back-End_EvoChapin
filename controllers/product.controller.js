@@ -26,11 +26,11 @@ function uploadImageProduct(req, res){
                 fileExt == 'jpeg' ||
                 fileExt == 'gif'){
 
-                    Product.findByIdAndUpdate(productId, {image:fileName},{new:true}, (err, teamUpdate) => {
+                    Product.findByIdAndUpdate(productId, {image:fileName},{new:true}, (err, productUpdate) => {
                                 if(err){
                                     return res.status(500).send({message: 'Error general en la actualización'});
-                                }else if(teamUpdate){
-                                    return res.send({message: 'Product actualizado', teamUpdate});
+                                }else if(productUpdate){
+                                    return res.send({message: 'Product actualizado', productUpdate});
                                 }else{
                                     return res.status(404).send({message: 'Product no actualizado'});
                                 }
