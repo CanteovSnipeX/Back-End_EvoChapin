@@ -5,8 +5,6 @@ var Schema = mongoose.Schema;
 
 var billSchema = ({
     name: String,
-    nit:Number,
-    date:String,
     products: [{type: Schema.ObjectId, ref:"product"}]
 })
 
