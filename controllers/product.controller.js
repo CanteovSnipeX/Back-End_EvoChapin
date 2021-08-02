@@ -30,7 +30,7 @@ function uploadImageProduct(req, res){
                                 if(err){
                                     return res.status(500).send({message: 'Error general en la actualización'});
                                 }else if(productUpdate){
-                                    return res.send({message: 'Product actualizado', productUpdate});
+                                    return res.send({product:productUpdate, productImage:productUpdate.image , message:'Imagen Correctamente Implementada'});
                                 }else{
                                     return res.status(404).send({message: 'Product no actualizado'});
                                 }

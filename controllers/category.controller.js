@@ -51,7 +51,7 @@ function uploadImageCategory(req, res){
                                 if(err){
                                     return res.status(500).send({message: 'Error general en la actualización'});
                                 }else if(teamUpdate){
-                                    return res.send({message: 'Category actualizado', teamUpdate});
+                                    return res.send({category:teamUpdate, categoryImage:teamUpdate.image,message:'Imagen Correctamente Implementada'});
                                 }else{
                                     return res.status(404).send({message: 'Category no actualizado'});
                                 }

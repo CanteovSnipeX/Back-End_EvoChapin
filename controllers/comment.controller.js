@@ -30,7 +30,7 @@ function removeComment(req, res) {
                 if(err){
                     return res.status(500).send({message: "Error al eliminar producto"});
                 }else if(productRemoved){
-                    return res.send({message: "Comentario eliminado exitosamente"});
+                    return res.send({message: "Comentario eliminado exitosamente",productRemoved});
                 }else{
                     return res.status(403).send({message: "No se eliminó"});
                }
@@ -42,7 +42,7 @@ function getComment(req, res) {
         if(err){
             return res.status(500).send({message: 'Error general en el servidor'})
         }else if (comment){
-            return res.send({message: 'Comentarios: ', comment})
+            return res.send({message: 'Comentarios:',comment})
 
         }else{
             return res.status(404).send({message: 'No hay registros'})
